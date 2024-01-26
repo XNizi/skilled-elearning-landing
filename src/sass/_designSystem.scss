@@ -1,0 +1,85 @@
+// colors
+$darkBlue: #666ca3;
+$dark: #13183f;
+$gray: #83869a;
+$darkPink: #f74780;
+$pink: #ffa7c3;
+$white: #fff;
+$orangeGradient: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+$purpleGradient: linear-gradient(180deg, #4851ff 0%, #f02aa6 99.92%);
+
+// typography
+@mixin HeadingXL {
+	font-size: 5.6rem;
+	font-weight: 800;
+}
+@mixin HeadingL {
+	font-size: 4rem;
+	font-weight: 800;
+}
+@mixin HeadingM {
+	font-size: 3.2rem;
+	font-weight: 800;
+	line-height: 40px;
+}
+@mixin HeadingS {
+	font-size: 2.4rem;
+	font-weight: 800;
+}
+@mixin BodyM {
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 28px;
+}
+@mixin BodyS {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+// buttons
+
+@mixin Button1Idle {
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 28px;
+	color: $white;
+	background-color: $dark;
+	border-radius: 28px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+@mixin Button1Hover {
+	background-color: $darkBlue;
+}
+@mixin Button2Idle {
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 28px;
+	color: $white;
+	background: $orangeGradient;
+	border-radius: 28px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+@mixin Button2Hover {
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%),
+		linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+}
+@mixin Button3Idle {
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 28px;
+	color: $white;
+	background: $purpleGradient;
+	border-radius: 28px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+@mixin Button3Hover {
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%),
+		linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+}

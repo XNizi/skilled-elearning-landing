@@ -1,0 +1,284 @@
+@use './reset' as *;
+@use './designSystem' as *;
+html {
+	font-size: 62.5%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	overflow-x: hidden;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 16px 0;
+	&__brand {
+		font-size: 2.8rem;
+		font-weight: 800;
+		color: $dark;
+	}
+	&__btn {
+		@include Button1Idle;
+		font-size: 1.6rem;
+		padding: 9px 24px 11px;
+		&:hover {
+			@include Button1Hover;
+		}
+	}
+}
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: 38px;
+
+	&__first-column {
+		display: flex;
+		flex-direction: column;
+		padding: 0 16px;
+	}
+	&__title {
+		@include HeadingL;
+		margin-bottom: 26px;
+	}
+	&__text {
+		font-size: 1.6rem;
+		color: $gray;
+		line-height: 26px;
+		text-align: left;
+		margin-bottom: 24px;
+	}
+	&__btn {
+		@include Button2Idle;
+		padding: 15px 37px;
+		align-self: start;
+		&:hover {
+			@include Button2Hover;
+		}
+	}
+	&__second-column {
+		display: flex;
+		flex-direction: column;
+	}
+	&__img {
+		margin-top: 60px;
+		content: url('../img/image-hero-mobile@2x.webp');
+	}
+}
+.main {
+	padding: 0 16px 80px;
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(180deg, #fff 0%, #f0ffff 100%);
+
+	&__infoBox {
+		background: $orangeGradient;
+		border-radius: 10px;
+		font-size: 2.4rem;
+		color: $white;
+		line-height: 32px;
+		font-weight: 800;
+		padding: 24px 28px 32px;
+	}
+	&__card-box {
+		display: flex;
+		flex-direction: column;
+	}
+	&__card-item {
+		position: relative;
+		border-radius: 10px;
+		box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+		background-color: $white;
+		padding: 0 28px 32px;
+		margin-top: 40px;
+	}
+	&__card-img {
+		width: 56px;
+		position: absolute;
+		top: -24px;
+	}
+	&__card-title {
+		font-size: 2rem;
+		color: $dark;
+		font-weight: 800;
+		margin-top: 56px;
+		margin-bottom: 16px;
+	}
+	&__card-text {
+		font-size: 1.6rem;
+		color: $gray;
+		line-height: 26px;
+		margin-bottom: 24px;
+	}
+	&__card-btn {
+		font-size: 1.8rem;
+		line-height: 28px;
+		color: $darkPink;
+		text-decoration: none;
+		font-weight: 700;
+		&:hover {
+			color: $pink;
+		}
+	}
+}
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 36px 16px;
+	background-color: $dark;
+	&__brand {
+		font-size: 2.8rem;
+		font-weight: 800;
+		color: $white;
+	}
+	&__btn {
+		@include Button3Idle;
+		font-size: 1.6rem;
+		padding: 9px 24px 11px;
+		&:hover {
+			@include Button3Hover;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.main {
+		padding: 0 39px 80px;
+		background: linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+		&__infoBox {
+			margin-top: 40px;
+			padding: 56px 21px 139px 32px;
+		}
+		&__card-box {
+			font-size: 0;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 11px;
+		}
+		&__card-item {
+			width: 49%;
+			padding: 0 22px 32px 32px;
+		}
+		&__infoBox {
+			width: 49%;
+		}
+	}
+	.header {
+		position: static;
+		display: flex;
+		flex-direction: row;
+		margin-top: 38px;
+		font-size: 0;
+		flex-wrap: wrap;
+
+		&__title {
+			@include HeadingXL;
+			margin-bottom: 26px;
+		}
+		&__text {
+			@include BodyM;
+			color: $gray;
+			margin-bottom: 24px;
+			line-height: 28px;
+		}
+
+		&__first-column {
+			margin-top: 99px;
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			width: 50%;
+			padding-left: 39px;
+			margin-bottom: 210px;
+			margin-right: 818px;
+		}
+		&__second-column {
+			flex-direction: column;
+			width: 50%;
+		}
+		&__img {
+			top: 0;
+			right: -258px;
+			position: absolute;
+			margin-top: 0;
+			content: url('../img/image-hero-tablet@2x.webp');
+			width: 640px;
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.nav {
+		padding: 29px 165px 0;
+	}
+	.header {
+		&__first-column {
+			margin-left: 165px;
+		}
+	}
+	.main {
+		display: flex;
+		align-items: center;
+		padding: 0 165px 140px;
+		background: linear-gradient(180deg, #fff 0%, #f0f1ff 100%);
+		&__infoBox {
+			margin-top: 40px;
+			padding: 56px 21px 139px 32px;
+			max-width: 350px;
+		}
+		&__card-box {
+			gap: 30px;
+			justify-content: center;
+			max-width: 1110px;
+		}
+		&__card-item {
+			margin-top: 24px;
+			width: 30%;
+			padding: 0 32px 40px;
+			max-width: 350px;
+		}
+		&__infoBox {
+			width: 30%;
+		}
+		&__card-text {
+			font-size: 1.6rem;
+			color: $gray;
+			line-height: 26px;
+			margin: 24px 0;
+		}
+	}
+	.header {
+		position: static;
+		display: flex;
+		flex-direction: row;
+		margin-top: 38px;
+		font-size: 0;
+		flex-wrap: wrap;
+		padding-bottom: 136px;
+
+		&__first-column {
+			margin-top: 99px;
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			width: 50%;
+			padding-left: 39px;
+			margin-bottom: 226px;
+		}
+		&__second-column {
+			flex-direction: column;
+			width: 50%;
+		}
+		&__img {
+			top: -146px;
+			right: -336px;
+			position: absolute;
+			margin-top: 0;
+			content: url('../img/image-hero-desktop@2x.webp');
+			width: 991px;
+			z-index: -1;
+		}
+	}
+}
